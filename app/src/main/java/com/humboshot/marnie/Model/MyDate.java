@@ -1,4 +1,4 @@
-package Model;
+package com.humboshot.marnie.Model;
 import java.util.Date;
 
 /**
@@ -125,11 +125,11 @@ public class MyDate {
         DateStatus = dateStatus;
     }
 
-    public Model.Route getRoute() {
+    public com.humboshot.marnie.Model.Route getRoute() {
         return Route;
     }
 
-    public void setRoute(Model.Route route) {
+    public void setRoute(com.humboshot.marnie.Model.Route route) {
         Route = route;
     }
 }

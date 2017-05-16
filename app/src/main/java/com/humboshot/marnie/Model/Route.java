@@ -1,4 +1,4 @@
-package Model;
+package com.humboshot.marnie.Model;
 
 import java.util.ArrayList;
 import java.util.List;

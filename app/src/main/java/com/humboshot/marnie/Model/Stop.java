@@ -1,4 +1,4 @@
-package Model;
+package com.humboshot.marnie.Model;
 
 import android.icu.util.DateInterval;
 
@@ -58,19 +58,19 @@ public class Stop {
         DepartureTime = departureTime;
     }
 
-    public Model.Route getRoute() {
+    public com.humboshot.marnie.Model.Route getRoute() {
         return Route;
     }
 
-    public void setRoute(Model.Route route) {
+    public void setRoute(com.humboshot.marnie.Model.Route route) {
         Route = route;
     }
 
-    public Model.Station getStation() {
+    public com.humboshot.marnie.Model.Station getStation() {
         return Station;
     }
 
-    public void setStation(Model.Station station) {
+    public void setStation(com.humboshot.marnie.Model.Station station) {
         Station = station;
     }
 }

@@ -1,4 +1,4 @@
-package Model;
+package com.humboshot.marnie.Model;
 
 /**
  * Created by Martin on 15-05-2017.

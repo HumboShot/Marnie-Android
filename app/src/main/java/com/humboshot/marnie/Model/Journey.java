@@ -1,4 +1,4 @@
-package Model;
+package com.humboshot.marnie.Model;
 
 import java.util.Date;
 
@@ -82,11 +82,11 @@ public class Journey {
         Status = status;
     }
 
-    public Model.Person getPerson() {
+    public com.humboshot.marnie.Model.Person getPerson() {
         return Person;
     }
 
-    public void setPerson(Model.Person person) {
+    public void setPerson(com.humboshot.marnie.Model.Person person) {
         Person = person;
     }
 
