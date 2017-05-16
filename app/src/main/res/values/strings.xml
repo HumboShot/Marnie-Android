@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Marnie</string>
     <string name="action_settings">Settings</string>
+    <string name="to">To: </string>
+    <string name="from">From: </string>
+
 </resources>
