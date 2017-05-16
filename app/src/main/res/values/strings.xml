@@ -1,6 +1,15 @@
 <resources>
     <string name="app_name">Marnie</string>
     <string name="action_settings">Settings</string>
+    <string name="auth0_client_id">WU0DxEKuQXDpgSJ8lGmLNr1Nux2ejl1P</string>
+    <string name="auth0_domain">olek.eu.auth0.com</string>
+    <string name="welcome">Welcome To Marnie</string>
+    <string name="title">Marnie - train dating</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login_success">Login was successful</string>
+    <string name="dbLogin">Log In</string>
+    <string name="log_out">Log Out</string>
     <string name="to">To</string>
     <string name="from">From</string>
     <string name="date">Date</string>
