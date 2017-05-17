@@ -10,12 +10,28 @@ public class Stop {
    private int Id;
    private int RouteId;
    private int StationId;
-   private DateInterval ArrivalTime;
-   private DateInterval DepartureTime;
+   private String ArrivalTime;
+   private String DepartureTime;
    private Route Route;
    private Station Station;
 
     public Stop() {
+    }
+
+    public String getArrivalTime() {
+        return ArrivalTime;
+    }
+
+    public void setArrivalTime(String arrivalTime) {
+        ArrivalTime = arrivalTime;
+    }
+
+    public String getDepartureTime() {
+        return DepartureTime;
+    }
+
+    public void setDepartureTime(String departureTime) {
+        DepartureTime = departureTime;
     }
 
     public int getId() {
@@ -40,22 +56,6 @@ public class Stop {
 
     public void setStationId(int stationId) {
         StationId = stationId;
-    }
-
-    public DateInterval getArrivalTime() {
-        return ArrivalTime;
-    }
-
-    public void setArrivalTime(DateInterval arrivalTime) {
-        ArrivalTime = arrivalTime;
-    }
-
-    public DateInterval getDepartureTime() {
-        return DepartureTime;
-    }
-
-    public void setDepartureTime(DateInterval departureTime) {
-        DepartureTime = departureTime;
     }
 
     public com.humboshot.marnie.Model.Route getRoute() {
