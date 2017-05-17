@@ -6,13 +6,36 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.humboshot.marnie.Model.Route;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
+    private Button btnSearchTrain;
+    private EditText editTo;
+    private EditText editFrom;
+    private EditText editDate;
+    private EditText editTime;
+    private static final String ENDPOINT = "http://marnie-001-site1.atempurl.com/api/Route?from=Aalborg&to=Vejle&startTime=10:35:00";
+    private List<Route> routes = new ArrayList<>();
+    private RequestQueue requestQueue;
+    private Gson gson;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +43,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         /*Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        Intent intent = new Intent(this, TrainSearch.class);
-        startActivity(intent);*/
+        setSupportActionBar(toolbar);*/
 
         Button logOutButton = (Button) findViewById(R.id.log_out);
         logOutButton.setOnClickListener(new View.OnClickListener() {
@@ -33,7 +54,57 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Toast.makeText(MainActivity.this, getString(R.string.login_success), Toast.LENGTH_SHORT).show();
+
+
+            editTo = (EditText) findViewById(R.id.to);
+            editFrom = (EditText) findViewById(R.id.from);
+            editDate = (EditText) findViewById(R.id.date);
+            editTime = (EditText) findViewById(R.id.time);
+            btnSearchTrain = (Button) findViewById(R.id.btn_TrainSearch);
+
+
+            requestQueue = Volley.newRequestQueue(getApplicationContext());
+            GsonBuilder gsonBuilder = new GsonBuilder();
+            gsonBuilder.setDateFormat("M/d/yy hh:mm a");
+            gson = gsonBuilder.create();
+
+            SetJourneyList();
+
+            btnSearchTrain.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
+        }
+
+    private void SetJourneyList() {
+        StringRequest request = new StringRequest(com.android.volley.Request.Method.GET, ENDPOINT, onRoutesLoaded, onRoutesError);
+
+        requestQueue.add(request);
     }
+
+    private final com.android.volley.Response.Listener<String> onRoutesLoaded = new com.android.volley.Response.Listener<String>() {
+        @Override
+        public void onResponse(String response) {
+            Log.d(MainActivity.class.getSimpleName(), response);
+
+            routes = Arrays.asList(gson.fromJson(response, Route[].class));
+            Log.d(MainActivity.class.getSimpleName(), routes.size() + " routes loaded.");
+
+            for (Route route : routes) {
+                Log.d(MainActivity.class.getSimpleName(), route.getId() + ": " + route.getName());
+            }
+        }
+    };
+
+    private final com.android.volley.Response.ErrorListener onRoutesError = new com.android.volley.Response.ErrorListener() {
+        @Override
+        public void onErrorResponse(VolleyError error) {
+            Log.e(MainActivity.class.getSimpleName(), error.toString());
+        }
+    };
+
     private void logOut() {
         startActivity(new Intent(this, LoginActivity.class));
         finish();
