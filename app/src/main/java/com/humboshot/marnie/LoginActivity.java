@@ -31,6 +31,10 @@ public class LoginActivity extends Activity {
         final EditText passwordEditText = (EditText) findViewById(R.id.passwordEditext);
         Button loginButton = (Button) findViewById(R.id.loginButton);
 
+        //Hardcoded values for debugging
+        emailEditText.setText("mm@mm.com");
+        passwordEditText.setText("123");
+
         // Add the onClick listener to the database login
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
