@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Marnie.iml" filepath="$PROJECT_DIR$/Marnie.iml" />
       <module fileurl="file://$PROJECT_DIR$/Marnie-Android.iml" filepath="$PROJECT_DIR$/Marnie-Android.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

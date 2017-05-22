@@ -1,7 +1,5 @@
 package com.humboshot.marnie.Model;
 
-import android.icu.util.DateInterval;
-
 /**
  * Created by User on 15-05-2017.
  */

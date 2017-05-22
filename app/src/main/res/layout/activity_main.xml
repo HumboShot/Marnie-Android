@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity">
+    tools:context=".Activities.MainActivity">
 
         <RelativeLayout
             android:id="@+id/TextFields"
@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/date"
                 android:ems="10"
-                android:hint="@string/time"
+                android:hint="@string/hintTime"
                 android:inputType="time" />
 
             <EditText
@@ -35,7 +35,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/to"
                 android:ems="10"
-                android:hint="@string/date"
+                android:hint="@string/hintDate"
                 android:inputType="date" />
 
             <EditText
